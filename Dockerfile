@@ -10,6 +10,9 @@ RUN yum install -y git
 RUN yum install epel-release unzip -y && yum install python-pip -y
 RUN pip install ansible==${ANSIBLE_VERSION}
 
+# Do not do strict host key checking for ansible-galaxy
+COPY ssh_config /root/.ssh/config
+
 # Install packer
 RUN curl -O https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip
 RUN unzip -d /usr/local packer_${PACKER_VERSION}_linux_amd64.zip
