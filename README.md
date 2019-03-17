@@ -1,5 +1,13 @@
 # Packer and Ansible
 
-Run Packer with the Ansible Provisioner
+Execute packer with the ansible provisioner
 
-Note to use packer use the command `packer.io`
+This container contains the following packages:
+
+-   ansible
+-   packer
+-   git
+
+**Note** to use packer use the command `packer.io`.
+
+You can also download ansible roles from a git source using ansible-galaxy

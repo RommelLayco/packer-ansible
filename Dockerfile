@@ -3,6 +3,9 @@ FROM centos:7
 ENV PACKER_VERSION=1.3.5
 ENV ANSIBLE_VERSION=2.7.6
 
+# Install git
+RUN yum install -y git
+
 # Install ansible
 RUN yum install epel-release unzip -y && yum install python-pip -y
 RUN pip install ansible==${ANSIBLE_VERSION}
